@@ -8,11 +8,11 @@ public class User {
 
     public User() {
         this.usersList = new HashMap<>();
+        this.route = new ArrayList<>();
     }
 
     public void createAccount(String newUser, String newPass) {
         this.usersList.put(newUser, newPass);
-
         System.out.println("Usuário criado com sucesso! Por favor faça o login.");
     }
 
@@ -21,12 +21,10 @@ public class User {
             if (usersList.get(user).equals(password)) {
                 System.out.println("Bem-vindo(a), " + user + "!");
                 return true;
-
             } else {
                 System.out.println("Senha incorreta.");
                 return false;
             }
-
         } else {
             System.out.println("Usuário não encontrado.");
             return false;
@@ -45,6 +43,4 @@ public class User {
         route.add(userRoute.getDestination());
         System.out.println("Rota criada!");
     }
-
-    
 }
