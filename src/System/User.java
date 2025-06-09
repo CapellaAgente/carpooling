@@ -10,15 +10,20 @@ public class User {
 
     public User() {
         this.usersList = new HashMap<>();
+        this.route = new ArrayList<>();
     }
 
     public void createAccount(String newUser, String newPass, String nome) {
         this.usersList.put(newUser, newPass);
+<<<<<<< HEAD
         this.nome = nome;
+=======
+>>>>>>> 6bd1f025aad1cd3c82fa2c4abd8dc7158244d5dc
         System.out.println("Usuário criado com sucesso! Por favor faça o login.");
     }
 
     public boolean login(String user, String password) {
+<<<<<<< HEAD
         if (usersList.containsKey(user) && usersList.get(user).equals(password)) {
             System.out.println("Bem-vindo(a), " + this.nome + "!");
             return true;
@@ -35,9 +40,35 @@ public class User {
         if (viagem.adicionarPassageiro(this)) {
             System.out.println("Reserva confirmada na viagem para " + viagem.getDestino() + "!");
             return true;
+=======
+        if (usersList.containsKey(user)) {
+            if (usersList.get(user).equals(password)) {
+                System.out.println("Bem-vindo(a), " + user + "!");
+                return true;
+            } else {
+                System.out.println("Senha incorreta.");
+                return false;
+            }
+>>>>>>> 6bd1f025aad1cd3c82fa2c4abd8dc7158244d5dc
         } else {
             System.out.println("Não foi possível reservar. Viagem lotada.");
             return false;
         }
     }
+<<<<<<< HEAD
+=======
+
+    public HashMap<String, String> getUsersList() {
+        return this.usersList;
+    }
+
+    public void addRoute(String origin, String destination) {
+        Route userRoute = new Route();
+        userRoute.setRoute(origin, destination);
+
+        route.add(userRoute.getOrigin());
+        route.add(userRoute.getDestination());
+        System.out.println("Rota criada!");
+    }
+>>>>>>> 6bd1f025aad1cd3c82fa2c4abd8dc7158244d5dc
 }
